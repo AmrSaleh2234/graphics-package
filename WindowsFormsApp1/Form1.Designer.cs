@@ -36,7 +36,7 @@
             // bChooseLine
             // 
             this.bChooseLine.Location = new System.Drawing.Point(50, 177);
-            this.bChooseLine.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.bChooseLine.Margin = new System.Windows.Forms.Padding(6);
             this.bChooseLine.Name = "bChooseLine";
             this.bChooseLine.Size = new System.Drawing.Size(150, 45);
             this.bChooseLine.TabIndex = 0;
@@ -75,7 +75,7 @@
             this.Controls.Add(this.bChooseCircule);
             this.Controls.Add(this.bChooseLine);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
