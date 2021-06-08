@@ -29,6 +29,7 @@ namespace WindowsFormsApp1
         {
             var aBrush = Brushes.Black;
             var g = panel.CreateGraphics();
+            panel.Refresh();
             Point p = new Point();
             for (int i = 0; i < x.Count; i++)
             {
@@ -42,6 +43,7 @@ namespace WindowsFormsApp1
         {
             var aBrush = Brushes.Black;
             var g = panel.CreateGraphics();
+            panel.Refresh();
             Point p = new Point();
             for (int i = 0; i < x.Count; i++)
             {
@@ -55,6 +57,7 @@ namespace WindowsFormsApp1
         {
             var aBrush = Brushes.Black;
             var g = panel.CreateGraphics();
+            panel.Refresh();
             Point p = new Point();
             for (int i = 0; i < x.Count; i++)
             {
@@ -68,6 +71,7 @@ namespace WindowsFormsApp1
         {
             var aBrush = Brushes.Black;
             var g = panel.CreateGraphics();
+            panel.Refresh();
             Point p = new Point();
             for (int i = 0; i < x.Count; i++)
             {
