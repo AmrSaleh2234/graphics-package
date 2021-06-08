@@ -24,3 +24,4 @@ D:\projects\c#\graphics-package\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.cspr
 D:\projects\c#\graphics-package\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 D:\projects\c#\graphics-package\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 D:\projects\c#\graphics-package\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\projects\c#\graphics-package\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form5.resources

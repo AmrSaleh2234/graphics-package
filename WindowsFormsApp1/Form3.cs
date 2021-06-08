@@ -12,13 +12,16 @@ namespace WindowsFormsApp1
 {
     public partial class Form3 : Form
     {
+        private List<Point> points;
         public Form3()
         {
             InitializeComponent();
+            this.points = new List<Point>();
         }
         private void midptellipse(double rx, double ry,
                         double xc, double yc)
         {
+            Point p = new Point();
 
             double dx, dy, d1, d2, x, y;
             x = 0;
@@ -42,6 +45,25 @@ namespace WindowsFormsApp1
                 g.FillRectangle(aBrush, (int)(x + xc), (int)(-y + yc), 1, 1);
                 g.FillRectangle(aBrush, (int)(-x + xc), (int)(-y + yc), 1, 1);
 
+
+                p.X = (int)(x + xc);
+                p.Y = (int)(y+yc);
+
+                points.Add(p);
+
+                p.X = (int)(-x+xc);
+                p.Y = (int)(y + yc);
+
+                points.Add(p);
+
+                p.X = (int)(x + xc);
+                p.Y = (int)(-y + yc);
+
+                points.Add(p);
+
+
+
+
                 // Checking and updating value of
                 // decision parameter based on algorithm
                 if (d1 < 0)
@@ -49,6 +71,7 @@ namespace WindowsFormsApp1
                     x++;
                     dx = dx + (2 * ry * ry);
                     d1 = d1 + dx + (ry * ry);
+
                 }
                 else
                 {
@@ -73,7 +96,27 @@ namespace WindowsFormsApp1
                 g.FillRectangle(aBrush, (int)(x + xc), (int)(-y + yc), 1, 1);
                 g.FillRectangle(aBrush, (int)(-x + xc), (int)(-y + yc), 1, 1);
 
-               
+                p.X = (int)(x + xc);
+                p.Y = (int)(y + yc);
+
+                points.Add(p);
+
+                p.X = (int)(-x + xc);
+                p.Y = (int)(y + yc);
+
+                points.Add(p);
+
+                p.X = (int)(x + xc);
+                p.Y = (int)(-y + yc);
+
+                points.Add(p);
+
+                p.X = (int)(-x + xc);
+                p.Y = (int)(-y + yc);
+
+                points.Add(p);
+
+
                 // Checking and updating parameter
                 // value based on algorithm
                 if (d2 > 0)
@@ -96,5 +139,161 @@ namespace WindowsFormsApp1
         {
             midptellipse(int.Parse(rx.Text), int.Parse(ry.Text), int.Parse(xc.Text), int.Parse(yc.Text));
         }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TransCButoon_Click(object sender, EventArgs e)
+        {
+
+            
+
+            if (points.Count != 0 && transCx.Text != null && transCx.Text != null)
+            {
+                int dx = int.Parse(transCx.Text);
+                int dy = int.Parse(transCy.Text);
+                transformation.translate(ref points, dx, dy, ref pElipse);
+            }
+            else
+            {
+                MessageBox.Show("Error", "translate error ",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+        
+        private void Sheeringxc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Sheering_Click(object sender, EventArgs e)
+        {
+            if (points.Count != 0 && sheeringxc.Text != null && sheeringyc.Text != null)
+            {
+                int dx = int.Parse(sheeringxc.Text);
+                int dy = int.Parse(sheeringyc.Text);
+                transformation.translate(ref points, dx, dy, ref pElipse);
+            }
+            else
+            {
+                MessageBox.Show("Error", "translate error ",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Refxy_Click_1(object sender, EventArgs e)
+        {
+            if (points.Count != 0)
+            {
+
+                transformation.reflection(ref points, -1, 1, ref pElipse);
+            }
+            else
+            {
+                MessageBox.Show("Error", "translate error ",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Refxc_Click_1(object sender, EventArgs e)
+        {
+            if (points.Count != 0)
+            {
+
+                transformation.reflection(ref points, 1, -1, ref pElipse);
+            }
+            else
+            {
+                MessageBox.Show("Error", "translate error ",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Brefc_Click_1(object sender, EventArgs e)
+        {
+            if (points.Count != 0)
+            {
+
+
+                transformation.reflection(ref points, -1, -1, ref pElipse);
+            }
+            else
+            {
+                MessageBox.Show("Error", "translate error ",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Brotatec_Click_1(object sender, EventArgs e)
+        {
+            if (points.Count != 0 && tRotateC.Text != null)
+            {
+                int dx = int.Parse(tRotateC.Text);
+
+                transformation.rotation(ref points, dx, ref pElipse);
+            }
+            else
+            {
+                MessageBox.Show("Error", "translate error ",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TRotateC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Bscalc_Click_1(object sender, EventArgs e)
+        {
+            if (points.Count != 0 && scalCx.Text != null && scalCy.Text != null)
+            {
+                int dx = int.Parse(scalCx.Text);
+                int dy = int.Parse(scalCy.Text);
+                transformation.scale(ref points, dx, dy, ref pElipse);
+
+            }
+            else
+            {
+                MessageBox.Show("You must enter dx and dy to scale and draw circule ", "translate error ",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ScalCy_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ScalCx_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TransCy_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TransCx_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Sheeringyc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }
