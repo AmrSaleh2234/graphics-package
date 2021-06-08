@@ -75,7 +75,7 @@ namespace WindowsFormsApp1
         private void TransCButoon_Click(object sender, EventArgs e)
         {
 
-            if (points.Count != 0 && transCx.Text != null && transCx.Text != null)
+            if (points.Count != 0 && transCx.Text != "" && transCx.Text != "")
             {
                 int dx = int.Parse(transCx.Text);
                 int dy = int.Parse(transCy.Text);

@@ -14,12 +14,14 @@ namespace WindowsFormsApp1
         {
             var aBrush = Brushes.Black;
             var g = panel.CreateGraphics();
+            panel.Refresh();
             Point p = new Point();
             for (int i = 0; i < x.Count; i++)
             {
                 p = x[i];
 
                 g.FillRectangle(aBrush, p.X + dx, p.Y + dy, 1, 1);
+
 
             }
         }
